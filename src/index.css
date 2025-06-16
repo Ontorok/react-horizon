@@ -235,7 +235,8 @@ i {
 }
 
 #sidebar nav a.pending {
-  color: hsl(224, 98%, 58%);
+  background: hsl(224, 62%, 70%);
+  animation: fadingInOut 1s ease-in-out infinite alternate;
 }
 
 #detail {
@@ -379,4 +380,16 @@ i {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+@keyframes fadingInOut {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
 }
