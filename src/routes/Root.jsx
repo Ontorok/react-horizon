@@ -7,7 +7,7 @@ import {
   useLoaderData,
   useNavigation,
   useSubmit,
-} from "react-router-dom";
+} from "react-router";
 import { createContact, getContacts } from "../contacts";
 
 export async function loader({ request }) {
