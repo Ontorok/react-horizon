@@ -1,52 +1,35 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router";
-import ErrorPage from "./error-page";
+import App from "./App";
 import "./index.css";
-import Index from "./routes";
-import Contact, {
-  action as contactAction,
-  loader as contactLoader,
-} from "./routes/Contact";
-import { action as destroyAction } from "./routes/Destroy";
-import EditContact, { action as editAction } from "./routes/Edit";
-import Root, {
-  action as rootAction,
-  loader as rootLoader,
-} from "./routes/Root";
+import { createBrowserRouter, RouterProvider } from "react-router";
+
+import RootLayout from "./layouts/RootLayout";
+import UseHook from "./components/react19/useHook/Starter";
+import FormAction from "./components/formAction/FormAction";
+import FormStatus from "./components/formStatus/FormStatus";
+import FormState from "./components/formState/FormState";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    loader: rootLoader,
-    action: rootAction,
+    element: <RootLayout />,
     children: [
       {
-        errorElement: <ErrorPage />,
-        children: [
-          {
-            index: true,
-            element: <Index />,
-          },
-          {
-            path: "contacts/:contactId",
-            element: <Contact />,
-            loader: contactLoader,
-            action: contactAction,
-          },
-          {
-            path: "contacts/:contactId/edit",
-            element: <EditContact />,
-            loader: contactLoader,
-            action: editAction,
-          },
-          {
-            path: "contacts/:contactId/destroy",
-            action: destroyAction,
-          },
-        ],
+        path: "/react-19/use-hook",
+        element: <UseHook />,
+      },
+      {
+        path: "/react-19/form-action",
+        element: <FormAction />,
+      },
+      {
+        path: "/react-19/form-status",
+        element: <FormStatus />,
+      },
+      {
+        path: "/react-19/form-state",
+        element: <FormState />,
       },
     ],
   },
