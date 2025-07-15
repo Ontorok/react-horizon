@@ -1,17 +1,19 @@
-import React, { useState, useActionState } from "react";
-import { useFormState } from "react-dom";
-
-const addToCard = (_state, formData) => {
-  const payload = {};
-  formData.forEach((value, key) => {
-    payload[key] = value;
-  });
-  return payload.itemID === "1" ? "Added to Cart" : "Out of Stock";
-};
+import React from "react";
 
 const Cart = ({ itemTitle, itemID }) => {
-  const [message, formAction] = useActionState(addToCard, null);
-
+  const [message, setMessage] = useState(null);
+  const formAction = (formData) => {
+    const payload = {};
+    formData.forEach((value, key) => {
+      payload[key] = value;
+    });
+    console.log(payload);
+    if (payload.itemID === "1") {
+      setMessage("Added to Card");
+    } else {
+      setMessage("Out of Stock");
+    }
+  };
   return (
     <form
       action={formAction}
@@ -30,7 +32,7 @@ const Cart = ({ itemTitle, itemID }) => {
   );
 };
 
-export default function FormState() {
+export default function FormStateStarter() {
   return (
     <>
       <Cart itemID="1" itemTitle={"iPhone 16"} />
