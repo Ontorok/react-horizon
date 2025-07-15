@@ -9,6 +9,7 @@ import UseHook from "./components/react19/useHook/Starter";
 import FormAction from "./components/formAction/FormAction";
 import FormStatus from "./components/formStatus/FormStatus";
 import FormState from "./components/formState/FormState";
+import UseOptimisticBasic from "./components/useOptimistic/UseOptimisticAdvanced";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/react-19/form-state",
         element: <FormState />,
+      },
+      {
+        path: "/react-19/use-optimistic",
+        element: <UseOptimisticBasic />,
       },
     ],
   },

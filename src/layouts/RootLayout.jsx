@@ -97,6 +97,14 @@ export default function RootLayout({ children }) {
                     Form State
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/react-19/use-optimistic"
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    Use Optimistic
+                  </Link>
+                </li>
               </ul>
             </li>
             <li>
